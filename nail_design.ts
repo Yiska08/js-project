@@ -1,6 +1,6 @@
 //IMPORT READLINE for reading console log input
-import { read } from 'node:fs';
-import readline from 'node:readline';
+
+const readline = require('node:readline'); 
 
 // askQuestion needs this
 const rl = readline.createInterface({
@@ -11,13 +11,13 @@ const rl = readline.createInterface({
 // needs rl
 const askQuestion = (question: string) => {
   return new Promise((resolve) => {
-    rl.question(question, (answer) => {
+    rl.question(question, (answer: string) => {
       resolve(answer);
     });
   });
 };
 
-
+//opens create design menu
 function createDesign()
 {
     console.log("Nail type:  1. Classic  2. Gel  3. Acrylic");
@@ -43,6 +43,8 @@ async function main() {
     // calls the option
     // String(value) -> takes in any value and explicitly cast it into String during runtime
     const name = String(raw_input);
+
+    
      
   } while (isContinue);
 
